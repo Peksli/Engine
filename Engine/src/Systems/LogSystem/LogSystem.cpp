@@ -25,7 +25,7 @@ namespace Engine {
 		UserSink = std::make_shared<sink>();
 		EngineLogger = std::make_shared<logger>("EngineLogger", EngineSink);
 		UserLogger = std::make_shared<logger>("UserLogger", UserSink);
-		ENGINE_INFO("System: {0} \033[42m\033[30mSTATUS: {1}(ready to use)\033[0m", "LogSystem", "Initialized");
+		ENGINE_INFO("System: {0}\t\033[42m\033[30mSTATUS: {1}\033[0m\tUSAGE: Ready to use", "LogSystem", "Initialized");
 	}
 
 }
