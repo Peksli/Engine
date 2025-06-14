@@ -1,6 +1,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include "src/Debug/Debug.h"
 #include "src/Systems/LogSystem/LogSystem.h"
 #include "src/Systems/LogSystem/LogMacros.h"
 #include "src/Window/Platform/Windows/WindowsWindow.h"
@@ -32,7 +33,8 @@ namespace Engine {
 
 	void WindowsWindow::Init()
 	{
-		glfwInit();
+		int success = glfwInit();
+		ENGINE_ASSERT(success, "Can not init GLFW lib");
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);

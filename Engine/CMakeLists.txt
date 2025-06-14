@@ -9,6 +9,14 @@ source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${source_files} ${include_fi
 add_library(Engine STATIC ${source_files} ${include_files})
 target_include_directories(Engine PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
+
+option(DEBUG_BUILD OFF)
+
+if(DEBUG_BUILD)
+	target_compile_definitions(Engine PUBLIC ENGINE_DEBUG_BUILD)
+endif()
+
+
 set(VENDOR_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src/Vendor)
 file(GLOB paths_to_dirs_in_vendor "${VENDOR_DIR}/*")
 foreach(path ${paths_to_dirs_in_vendor})
