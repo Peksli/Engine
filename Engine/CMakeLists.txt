@@ -8,3 +8,11 @@ source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${source_files} ${include_fi
 
 add_library(Engine STATIC ${source_files} ${include_files})
 target_include_directories(Engine PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+set(VENDOR_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src/Vendor)
+file(GLOB paths_to_dirs_in_vendor "${VENDOR_DIR}/*")
+foreach(path ${paths_to_dirs_in_vendor})
+	get_filename_component(dir_name ${path} NAME)
+	add_subdirectory(${path})
+	target_link_libraries(Engine PUBLIC ${dir_name})
+endforeach()
