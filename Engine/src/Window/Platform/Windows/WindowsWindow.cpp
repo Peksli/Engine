@@ -34,7 +34,9 @@ namespace Engine {
 	void WindowsWindow::Init()
 	{
 		int success = glfwInit();
-		ENGINE_ASSERT(success, "Can not init GLFW lib");
+		#ifdef ENIGNE_DEBUG_BUILD
+			ENGINE_ASSERT(success, "Can not init GLFW lib");
+		#endif
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
