@@ -9,7 +9,7 @@ namespace Engine {
 		LogSystemAdapter();
 		~LogSystemAdapter();
 
-		void Initialize() override;
+		void Initialize();
 	};
 
 }

@@ -31,6 +31,13 @@ namespace Engine {
 		}
 	}
 
+	void WindowsWindow::InitializeCallbacks() {
+		glfwSetWindowUserPointer(wdata.windowGLFW, &wdata);
+		glfwSetWindowCloseCallback(wdata.windowGLFW, [](GLFWwindow* window) {
+			ENGINE_INFO("WindowCloseEvent");
+			});
+	}
+
 	void WindowsWindow::Init()
 	{
 		int success = glfwInit();

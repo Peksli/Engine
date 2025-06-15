@@ -15,6 +15,7 @@ namespace Engine {
 		virtual void Init() = 0;
 		virtual void Destroy() = 0;
 		virtual void OnUpdate() = 0;
+		virtual void InitializeCallbacks() = 0;
 		unsigned int GetWidth() const { return wdata.m_width; }
 		unsigned int GetHeight() const { return wdata.m_height; }
 		std::string GetTitle() const { return wdata.m_title; }

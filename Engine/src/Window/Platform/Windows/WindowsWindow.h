@@ -13,6 +13,7 @@ namespace Engine {
 		void Init() override;
 		void Destroy() override;
 		void OnUpdate() override;
+		void InitializeCallbacks() override;
 	};
 
 }

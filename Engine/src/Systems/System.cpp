@@ -1,4 +1,5 @@
 #include "src/Systems/System.h"
+#include "src/Systems/LogSystem/LogSystem.h"
 
 
 namespace Engine {
@@ -17,13 +18,11 @@ namespace Engine {
 		subsystems.push_back(sys);
 	}
 
-	void System::InitializeAllSystems()
-	{
+	void System::InitializeAllSystems() {
 		for (auto subsystem : subsystems) {
 			subsystem->Initialize();
 		}
 	}
 
-	std::vector<System*> System::subsystems { };
-
+	std::vector<System*> System::subsystems{ };
 }

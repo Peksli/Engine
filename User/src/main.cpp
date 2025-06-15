@@ -10,10 +10,13 @@ public:
 
 int main() {
 	
+	UserApplication uapp;
+
 	Engine::LogSystemAdapter logsys_adapter;
+	Engine::EventSystem evensys;
 	Engine::System::InitializeAllSystems();
 
-	UserApplication uapp;
+
 	uapp.Run();
 
 	return 0;

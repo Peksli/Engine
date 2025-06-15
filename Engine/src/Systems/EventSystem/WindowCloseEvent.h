@@ -11,12 +11,7 @@ namespace Engine {
 	public:
 		EVENT_TYPE_SECTION(WindowCloseEvent);
 		EVENT_CATEGORY_SECTION(WindowCategory);
-		std::string EventToText() const override
-		{
-			std::stringstream ss;
-			ss << "Event: WindowCloseEvent	STATUS: Released";
-			return ss.str();
-		}
+		EVENT_TO_TEXT("EVENT: WindowCloseEvent	STATUS: Released");
 	};
 
 }

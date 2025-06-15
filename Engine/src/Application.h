@@ -18,7 +18,7 @@ namespace Engine {
 		Application operator=(const Application& app) = delete;
 		Application operator=(Application&& app) = delete;
 	private:
-		std::unique_ptr<WindowsWindow> window;
+		std::shared_ptr<WindowsWindow> window;
 	};
 
 }

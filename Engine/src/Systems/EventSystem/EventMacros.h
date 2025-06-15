@@ -8,3 +8,11 @@
 
 #define EVENT_CATEGORY_SECTION(category) \
 	EventCategory GetEventCategory() const override { Event::EventCategory::##category; }
+
+#define EVENT_TO_TEXT(text) \
+	std::string EventToText() const override \
+	{ \
+		std::stringstream ss; \
+		ss << #text; \
+		return ss.str(); \
+	};

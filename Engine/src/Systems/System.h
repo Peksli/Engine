@@ -1,5 +1,5 @@
 #pragma once
-
+#include "src/Window/Platform/Windows/WindowsWindow.h"
 #include <vector>
 
 
@@ -11,7 +11,6 @@ namespace Engine {
 		virtual ~System();
 		
 		virtual void Initialize() = 0;
-
 		static void AddSubsystem(System* sys);
 		static void InitializeAllSystems();
 	private:
