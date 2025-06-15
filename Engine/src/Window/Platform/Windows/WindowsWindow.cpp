@@ -4,7 +4,7 @@
 #include "src/Debug/Debug.h"
 #include "src/Systems/LogSystem/LogSystem.h"
 #include "src/Systems/LogSystem/LogMacros.h"
-#include "src/Systems/EventSystem/Events.h"
+#include "src/Systems/EventSystem/Events/Events.h"
 #include "src/Window/Platform/Windows/WindowsWindow.h"
 
 
