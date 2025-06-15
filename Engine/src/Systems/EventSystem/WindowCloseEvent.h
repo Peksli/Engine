@@ -11,7 +11,7 @@ namespace Engine {
 	public:
 		EVENT_TYPE_SECTION(WindowCloseEvent);
 		EVENT_CATEGORY_SECTION(WindowCategory);
-		EVENT_TO_TEXT("EVENT: WindowCloseEvent	STATUS: Released");
+		EVENT_TO_TEXT("EVENT: WindowCloseEvent\t\tSTATUS: Released");
 	};
 
 }

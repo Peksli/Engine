@@ -4,6 +4,7 @@
 #include "src/Debug/Debug.h"
 #include "src/Systems/LogSystem/LogSystem.h"
 #include "src/Systems/LogSystem/LogMacros.h"
+#include "src/Systems/EventSystem/Events.h"
 #include "src/Window/Platform/Windows/WindowsWindow.h"
 
 
@@ -34,7 +35,10 @@ namespace Engine {
 	void WindowsWindow::InitializeCallbacks() {
 		glfwSetWindowUserPointer(wdata.windowGLFW, &wdata);
 		glfwSetWindowCloseCallback(wdata.windowGLFW, [](GLFWwindow* window) {
-			ENGINE_INFO("WindowCloseEvent");
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+			WindowCloseEvent event;
+
+			data.eventCallbackFn(event);
 			});
 	}
 
